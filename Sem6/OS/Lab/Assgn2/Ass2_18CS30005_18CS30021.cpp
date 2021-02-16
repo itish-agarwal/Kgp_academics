@@ -74,66 +74,38 @@ string trim(string s) {
 
 void OpenAndRedirect(string input, string output) {
     if(input.size()) {
-      
-      
-      //The open() system call opens the file specified by pathname.  
-      //If the specified file does not exist, it may optionally (if O_CREAT is specified in flags) be created by open().
-
-       //The return value of open() is a file descriptor, a small, nonnegative integer that 
-       //is used in subsequent system calls to refer to the open file.
-       //The file descriptor returned by a successful call will be the 
-     //  lowest-numbered file descriptor not currently open for the process.
-
-      
-      
+            
         int input_file = open(input.c_str(), O_RDONLY);
 
         if (input_file < 0) {
           //Error in opening 
-   
-
-//In simple words, when you open a file, the operating system creates an entry to 
-//represent that file and store the information about that opened file. 
-//So if there are 100 files opened in your OS then there will be 
-//100 entries in OS (somewhere in kernel). 
-//These entries are represented by integers like (...100, 101, 102....). 
-// This entry number is the file descriptor. 
-//So it is just an integer number that uniquely represents an opened file in operating system. 
-//If your process opens 10 files then your Process table will have 10 entries for file descriptors.
-
-//Similarly when you open a network socket, it is also represented by an integer and 
-//it is called Socket Descriptor. I hope you understand
-
-
-
-
-//DUP
-
-//dup()
-
-
-
+          //In simple words, when you open a file, the operating system creates an entry to 
+          //represent that file and store the information about that opened file. 
+          //So if there are 100 files opened in your OS then there will be 
+          //100 entries in OS (somewhere in kernel). 
+          //These entries are represented by integers like (...100, 101, 102....). 
+          // This entry number is the file descriptor. 
+          //So it is just an integer number that uniquely represents an opened file in operating system. 
+          //If your process opens 10 files then your Process table will have 10 entries for file descriptors.
             cout << "Error : " << input << " file could not be opened" << endl;
             exit(EXIT_FAILURE);
         }   
         //dup2(file_descriptor, 0) -> take input from input file 
         
-        //dup2()
-        
-//The dup2() system call creates a copy of a file descriptor.
+        //The dup2() system call creates a copy of a file descriptor.
 
-//It uses the lowest-numbered unused descriptor for the new descriptor.
-//If the copy is successfully created, then the original and copy file descriptors may be 
-//used interchangeably.
-//They both refer to the same open file description and thus share file offset and file status flags.
+        //It uses the lowest-numbered unused descriptor for the new descriptor.
+        //If the copy is successfully created, then the original and copy file descriptors may be 
+        //used interchangeably.
+        //They both refer to the same open file description and thus share file offset and file status flags.
 
-//The dup2() system call is similar to dup() but the basic difference 
-//between them is that instead of using the lowest-numbered unused file descriptor,
-// it uses the descriptor number specified by the user.
+        //The dup2() system call is similar to dup() but the basic difference 
+        //between them is that instead of using the lowest-numbered unused file descriptor,
+        // it uses the descriptor number specified by the user.
 
-//execvp : Using this command, the created child process does not have to run the same program 
-//as the parent process does. The exec type system calls allow a process to run any program files, 
-//which include a binary executable or a shell script
+        //execvp : Using this command, the created child process does not have to run the same program 
+        //as the parent process does. The exec type system calls allow a process to run any program files, 
+        //which include a binary executable or a shell script
 
         if (dup2(input_file, 0) < 0) {
             cout << "Error : Input could not be redirected" << endl;
@@ -204,16 +176,15 @@ vector<string> checkRedirection(string line) {
 
 // Execute the commands
 
-int execute(string cmd) {
-  
- //execvp : Using this command, the created child process does not have to run the same 
- //program as the parent process does.
- // The exec type system calls allow a process to run any program files, 
- //which include a binary executable or a shell script . Syntax:
- 
-//int execvp (const char *file, char *const argv[]);
-//file: points to the file name associated with the file being executed.
-//argv:  is a null terminated array of character pointers.
+int execute(string cmd) {      
+   //execvp : Using this command, the created child process does not have to run the same 
+   //program as the parent process does.
+   //The exec type system calls allow a process to run any program files, 
+   //which include a binary executable or a shell script . Syntax:
+   
+    //int execvp (const char *file, char *const argv[]);
+    //file: points to the file name associated with the file being executed.
+    //argv:  is a null terminated array of character pointers.
 
     vector<string> args;
     vector<string> v = splitString(cmd,' ');
@@ -251,30 +222,19 @@ void printDir() {
 void shell_loop() { 
 
 	  string cmd;
-    int status = 0;
-    
-      
+    int status = 0;      
     while(true) {
-        
         bool bg_status = false;
-        
         char* username = getenv("USER");
-        
         printf(ANSI_CYAN_BOLD "%s", username);
-        
         printf(ANSI_DEFAULT);
-        cout << "@ ";
-        
+        printf("@ ");
         printf(ANSI_YELLOW_BOLD);
-        
         printDir();
         printf(ANSI_DEFAULT);
-        cout << " $ ";       
-        
+        printf(" $ ");     
         getline(cin, cmd);
-
         cmd = trim(cmd);
-
         if (cmd == "quit" || cmd == "q") {
           cout << "Goobdbye till we meet next :)\n";
         	break;
@@ -328,12 +288,12 @@ void shell_loop() {
                 }
                 exit(EXIT_SUCCESS); 
             }
-            
+                        
             //Normally, when the parent forks a child that executes a command using execlp() or
-//execvp(), the parent calls the function wait(), thereby waiting for the child to terminate.
-//Only after that, it will ask the user for the next command. However, if we want to run a
-//program in the background, we do not give the wait(), and so the parent asks for the next
-//command even while the child is in execution.
+            //execvp(), the parent calls the function wait(), thereby waiting for the child to terminate.
+            //Only after that, it will ask the user for the next command. However, if we want to run a
+            //program in the background, we do not give the wait(), and so the parent asks for the next
+            //command even while the child is in execution.
 
             if(!bg_status) {
                 wait(&status);
