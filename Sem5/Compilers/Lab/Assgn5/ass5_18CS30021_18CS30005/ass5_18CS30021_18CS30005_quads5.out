@@ -1,0 +1,174 @@
+
+____________________________________________________________________________________________________
+Three Address Code:
+____________________________________________________________________________________________________
+
+L0: max: 
+L1:      if a > b goto 4
+L2:      goto 6
+L3:      goto 6
+L4:      return a
+L5:      goto 6
+L6:      return b
+L7:      t0 = 100
+
+L8: func: 
+L9:      t1 = 100
+L10:      t2 = 0
+L11:      t3 = t2 * 4
+L12:      t4 = 0
+L13:      val[t3] = t4
+L14:      t6 = 1000000
+L15:      max_val = t6
+L16:      t7 = 1
+L17:      i = t7
+L18:      if i <= n goto 23
+L19:      goto 46
+L20:      t9 = i
+L21:      i = i + 1
+L22:      goto 18
+L23:      t10 = 0
+L24:      j = t10
+L25:      if j < i goto 30
+L26:      goto 43
+L27:      t12 = j
+L28:      j = j + 1
+L29:      goto 25
+L30:      param max_val
+L31:      t13 = j * 4
+L32:      t14 = price[t13]
+L33:      t15 = i - j
+L34:      t16 = 1
+L35:      t17 = t15 - t16
+L36:      t18 = t17 * 4
+L37:      t19 = val[t18]
+L38:      t20 = t14 + t19
+L39:      param t20
+L40:      t21 = call max, 2
+L41:      max_val = t21
+L42:      goto 27
+L43:      t23 = i * 4
+L44:      val[t23] = max_val
+L45:      goto 20
+L46:      t25 = n * 4
+L47:      t26 = val[t25]
+L48:      return t26
+
+L49: main: 
+L50:      t0 = 'a'
+L51:      c = t0
+L52:      t1 = 'x'
+L53:      b = t1
+L54:      t2 = 100
+L55:      t3 = 100
+L56:      n = t3
+L57:      t4 = 0
+L58:      i = t4
+L59:      if i < n goto 64
+L60:      goto 67
+L61:      t6 = i
+L62:      i = i + 1
+L63:      goto 59
+L64:      t7 = i * 4
+L65:      arr[t7] = i
+L66:      goto 61
+L67:      t9 = 0
+L68:      ans = t9
+L69:      param arr
+L70:      param size
+L71:      t10 = call func, 2
+L72:      ans = t10
+L73:      t12 = 0
+L74:      return t12
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+Table Name: Global			 Parent Name: NULL
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+max             int                  -                    4               0               max
+func            int                  -                    4               4               func
+main            int                  -                    4               8               main
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: max			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+a               int                  -                    4               0               NULL
+b               int                  -                    4               4               NULL
+return          int                  -                    4               8               NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: func			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+price           arr(100,int)         -                    400             0               NULL
+t0              int                  100                  4               400             NULL
+n               int                  -                    4               404             NULL
+return          int                  -                    4               408             NULL
+val             arr(100,int)         -                    400             412             NULL
+t1              int                  100                  4               812             NULL
+t2              int                  0                    4               816             NULL
+t3              int                                       4               820             NULL
+t4              int                  0                    4               824             NULL
+t5              int                                       4               828             NULL
+i               int                  -                    4               832             NULL
+j               int                  -                    4               836             NULL
+max_val         int                  1000000              4               840             NULL
+t6              int                  1000000              4               844             NULL
+t7              int                  1                    4               848             NULL
+t8              int                                       4               852             NULL
+t9              int                                       4               856             NULL
+t10             int                  0                    4               860             NULL
+t11             int                                       4               864             NULL
+t12             int                                       4               868             NULL
+max             int                  -                    4               872             NULL
+t13             int                                       4               876             NULL
+t14             int                                       4               880             NULL
+t15             int                                       4               884             NULL
+t16             int                  1                    4               888             NULL
+t17             int                                       4               892             NULL
+t18             int                                       4               896             NULL
+t19             int                                       4               900             NULL
+t20             int                                       4               904             NULL
+t21             int                                       4               908             NULL
+t22             int                                       4               912             NULL
+t23             int                                       4               916             NULL
+t24             int                                       4               920             NULL
+t25             int                                       4               924             NULL
+t26             int                                       4               928             NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: main			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+return          int                  -                    4               0               NULL
+c               char                 'a'                  1               4               NULL
+t0              char                 'a'                  1               5               NULL
+b               char                 'x'                  1               6               NULL
+t1              char                 'x'                  1               7               NULL
+arr             arr(100,int)         -                    400             8               NULL
+t2              int                  100                  4               408             NULL
+i               int                  -                    4               412             NULL
+n               int                  100                  4               416             NULL
+t3              int                  100                  4               420             NULL
+t4              int                  0                    4               424             NULL
+t5              int                                       4               428             NULL
+t6              int                                       4               432             NULL
+t7              int                                       4               436             NULL
+t8              int                                       4               440             NULL
+ans             int                  0                    4               444             NULL
+t9              int                  0                    4               448             NULL
+func            int                  -                    4               452             NULL
+size            int                  -                    4               456             NULL
+t10             int                                       4               460             NULL
+t11             int                                       4               464             NULL
+t12             int                  0                    4               468             NULL
+----------------------------------------------------------------------------------------------------
+

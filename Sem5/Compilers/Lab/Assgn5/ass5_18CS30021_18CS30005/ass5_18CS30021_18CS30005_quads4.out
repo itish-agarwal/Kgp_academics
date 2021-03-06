@@ -1,0 +1,136 @@
+
+____________________________________________________________________________________________________
+Three Address Code:
+____________________________________________________________________________________________________
+L0:      t0 = 1
+L1:      test = t0
+
+L2: main: 
+
+L3: main: 
+L4:      t0 = 20
+L5:      t1 = 43
+L6:      t2 = 0
+L7:      i = t2
+L8:      t3 = 9
+L9:      n = t3
+L10:      t4 = 0
+L11:      i = t4
+L12:      if i < n goto 17
+L13:      goto 22
+L14:      t6 = i
+L15:      i = i + 1
+L16:      goto 12
+L17:      t7 = i * 4
+L18:      t8 = 1
+L19:      t9 = i + t8
+L20:      arr_int[t7] = t9
+L21:      goto 14
+L22:      i = n
+L23:      t12 = 0
+L24:      if i >= t12 goto 29
+L25:      goto 36
+L26:      t13 = i
+L27:      i = i - 1
+L28:      goto 23
+L29:      t14 = i * 4
+L30:      t15 = 0.1
+L31:      t16 = int2float(i)
+L32:      t17 = t16 * t15
+L33:      t18 = float2int(t17)
+L34:      arr_d[t14] = t18
+L35:      goto 26
+L36:      t19 = 90
+L37:      timepass = t19
+L38:      t20 = timepass * timepass
+L39:      t21 = timepass + t20
+L40:      timepass = t21
+L41:      t23 = 0
+L42:      i = t23
+L43:      if i < n goto 48
+L44:      goto 53
+L45:      t25 = i
+L46:      i = i + 1
+L47:      goto 43
+L48:      t26 = i * 4
+L49:      t27 = 1
+L50:      t28 = i + t27
+L51:      arr_int[t26] = t28
+L52:      goto 45
+L53:      i = n
+L54:      t31 = 0
+L55:      if i >= t31 goto 60
+L56:      goto 67
+L57:      t32 = i
+L58:      i = i - 1
+L59:      goto 54
+L60:      t33 = i * 4
+L61:      t34 = 0.1
+L62:      t35 = int2float(i)
+L63:      t36 = t35 * t34
+L64:      t37 = float2int(t36)
+L65:      arr_d[t33] = t37
+L66:      goto 57
+L67:      return timepass
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+Table Name: Global			 Parent Name: NULL
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+test            int                  1                    4               0               NULL
+t0              int                  1                    4               4               NULL
+main            int                  -                    4               8               main
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: main			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+return          int                  -                    4               0               NULL
+arr_int         arr(20,int)          -                    80              4               NULL
+t0              int                  20                   4               84              NULL
+arr_d           arr(43,int)          -                    172             88              NULL
+t1              int                  43                   4               260             NULL
+i               int                  0                    4               264             NULL
+t2              int                  0                    4               268             NULL
+n               int                  9                    4               272             NULL
+t3              int                  9                    4               276             NULL
+t4              int                  0                    4               280             NULL
+t5              int                                       4               284             NULL
+t6              int                                       4               288             NULL
+t7              int                                       4               292             NULL
+t8              int                  1                    4               296             NULL
+t9              int                                       4               300             NULL
+t10             int                                       4               304             NULL
+t11             int                                       4               308             NULL
+t12             int                  0                    4               312             NULL
+t13             int                                       4               316             NULL
+t14             int                                       4               320             NULL
+t15             float                0.1                  8               324             NULL
+t16             float                                     8               332             NULL
+t17             float                                     8               340             NULL
+t18             int                                       4               348             NULL
+timepass        int                  90                   4               352             NULL
+t19             int                  90                   4               356             NULL
+t20             int                                       4               360             NULL
+t21             int                                       4               364             NULL
+t22             int                                       4               368             NULL
+t23             int                  0                    4               372             NULL
+t24             int                                       4               376             NULL
+t25             int                                       4               380             NULL
+t26             int                                       4               384             NULL
+t27             int                  1                    4               388             NULL
+t28             int                                       4               392             NULL
+t29             int                                       4               396             NULL
+t30             int                                       4               400             NULL
+t31             int                  0                    4               404             NULL
+t32             int                                       4               408             NULL
+t33             int                                       4               412             NULL
+t34             float                0.1                  8               416             NULL
+t35             float                                     8               424             NULL
+t36             float                                     8               432             NULL
+t37             int                                       4               440             NULL
+----------------------------------------------------------------------------------------------------
+

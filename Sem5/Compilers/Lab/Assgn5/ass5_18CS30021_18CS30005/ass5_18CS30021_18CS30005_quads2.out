@@ -1,0 +1,299 @@
+
+____________________________________________________________________________________________________
+Three Address Code:
+____________________________________________________________________________________________________
+
+L0: fibo: 
+L1:      t0 = 1
+L2:      if n <= t0 goto 5
+L3:      goto 8
+L4:      goto 8
+L5:      t1 = 1
+L6:      return t1
+L7:      goto 8
+L8:      t2 = 1
+L9:      t3 = n - t2
+L10:      param t3
+L11:      t4 = call fibo, 1
+L12:      t5 = 2
+L13:      t6 = n - t5
+L14:      param t6
+L15:      t7 = call fibo, 1
+L16:      t8 = t4 + t7
+L17:      return t8
+
+L18: power: 
+L19:      t0 = 0
+L20:      if b == t0 goto 23
+L21:      goto 26
+L22:      goto 26
+L23:      t1 = 1
+L24:      return t1
+L25:      goto 26
+L26:      param a
+L27:      t2 = 2
+L28:      t3 = b / t2
+L29:      param t3
+L30:      t4 = call power, 2
+L31:      res = t4
+L32:      res = res
+L33:      t6 = 2
+L34:      t7 = b % t6
+L35:      goto 38
+L36:      res = a
+L37:      goto 40
+L38:      if t7 == 0 goto 40
+L39:      goto 36
+L40:      return res
+
+L41: bubblesort: 
+L42:      t0 = 0
+L43:      i = t0
+L44:      t2 = 1
+L45:      t3 = n - t2
+L46:      if i < t3 goto 51
+L47:      goto 86
+L48:      t4 = i
+L49:      i = i + 1
+L50:      goto 44
+L51:      t5 = 0
+L52:      j = t5
+L53:      t7 = 1
+L54:      t8 = n - t7
+L55:      t9 = t8 - i
+L56:      if j < t9 goto 61
+L57:      goto 48
+L58:      t10 = j
+L59:      j = j + 1
+L60:      goto 53
+L61:      t11 = j * 4
+L62:      t12 = arr[t11]
+L63:      t13 = 1
+L64:      t14 = j + t13
+L65:      t15 = t14 * 4
+L66:      t16 = arr[t15]
+L67:      if t12 > t16 goto 70
+L68:      goto 58
+L69:      goto 84
+L70:      t17 = j * 4
+L71:      t18 = arr[t17]
+L72:      tmp = t18
+L73:      t19 = j * 4
+L74:      t20 = 1
+L75:      t21 = j + t20
+L76:      t22 = t21 * 4
+L77:      t23 = arr[t22]
+L78:      arr[t19] = t23
+L79:      t25 = 1
+L80:      t26 = j + t25
+L81:      t27 = t26 * 4
+L82:      arr[t27] = tmp
+L83:      goto 58
+L84:      goto 58
+L85:      goto 48
+L86:      return 
+
+L87: main: 
+L88:      param n
+L89:      t0 = call read, 1
+L90:      param n
+L91:      t1 = call print, 1
+L92:      t2 = 6
+L93:      param t2
+L94:      t3 = call fib, 1
+L95:      n = t3
+L96:      t5 = 100
+L97:      t6 = 0
+L98:      t7 = t6 * 4
+L99:      t8 = 9
+L100:      a[t7] = t8
+L101:      t10 = 1
+L102:      t11 = t10 * 4
+L103:      t12 = 8
+L104:      a[t11] = t12
+L105:      t14 = 2
+L106:      t15 = t14 * 4
+L107:      t16 = 839
+L108:      a[t15] = t16
+L109:      t18 = 3
+L110:      t19 = t18 * 4
+L111:      t20 = 33
+L112:      a[t19] = t20
+L113:      t22 = 4
+L114:      t23 = t22 * 4
+L115:      t24 = 2
+L116:      a[t23] = t24
+L117:      t26 = 5
+L118:      t27 = t26 * 4
+L119:      t28 = 67
+L120:      a[t27] = t28
+L121:      t30 = 6
+L122:      t31 = t30 * 4
+L123:      t32 = 92312
+L124:      a[t31] = t32
+L125:      t34 = 7
+L126:      t35 = t34 * 4
+L127:      t36 = 90
+L128:      a[t35] = t36
+L129:      t38 = 8
+L130:      t39 = t38 * 4
+L131:      t40 = 7
+L132:      a[t39] = t40
+L133:      param a
+L134:      t42 = 9
+L135:      param t42
+L136:      t43 = call bubblesort, 2
+L137:      t44 = 0
+L138:      return t44
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+Table Name: Global			 Parent Name: NULL
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+fibo            int                  -                    4               0               fibo
+power           int                  -                    4               4               power
+bubblesort      void                 -                    0               8               bubblesort
+main            int                  -                    4               8               main
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: fibo			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+n               int                  -                    4               0               NULL
+return          int                  -                    4               4               NULL
+t0              int                  1                    4               8               NULL
+t1              int                  1                    4               12              NULL
+fibo            int                  -                    4               16              NULL
+t2              int                  1                    4               20              NULL
+t3              int                                       4               24              NULL
+t4              int                                       4               28              NULL
+t5              int                  2                    4               32              NULL
+t6              int                                       4               36              NULL
+t7              int                                       4               40              NULL
+t8              int                                       4               44              NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: power			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+a               int                  -                    4               0               NULL
+b               int                  -                    4               4               NULL
+return          int                  -                    4               8               NULL
+t0              int                  0                    4               12              NULL
+t1              int                  1                    4               16              NULL
+res             int                  -                    4               20              NULL
+power           int                  -                    4               24              NULL
+t2              int                  2                    4               28              NULL
+t3              int                                       4               32              NULL
+t4              int                                       4               36              NULL
+t5              int                                       4               40              NULL
+t6              int                  2                    4               44              NULL
+t7              int                                       4               48              NULL
+t8              int                                       4               52              NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: bubblesort			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+arr             arr(0,int)           -                    0               0               NULL
+n               int                  -                    4               0               NULL
+i               int                  -                    4               4               NULL
+j               int                  -                    4               8               NULL
+t0              int                  0                    4               12              NULL
+t1              int                                       4               16              NULL
+t2              int                  1                    4               20              NULL
+t3              int                                       4               24              NULL
+t4              int                                       4               28              NULL
+t5              int                  0                    4               32              NULL
+t6              int                                       4               36              NULL
+t7              int                  1                    4               40              NULL
+t8              int                                       4               44              NULL
+t9              int                                       4               48              NULL
+t10             int                                       4               52              NULL
+t11             int                                       4               56              NULL
+t12             int                                       4               60              NULL
+t13             int                  1                    4               64              NULL
+t14             int                                       4               68              NULL
+t15             int                                       4               72              NULL
+t16             int                                       4               76              NULL
+tmp             int                  -                    4               80              NULL
+t17             int                                       4               84              NULL
+t18             int                                       4               88              NULL
+t19             int                                       4               92              NULL
+t20             int                  1                    4               96              NULL
+t21             int                                       4               100             NULL
+t22             int                                       4               104             NULL
+t23             int                                       4               108             NULL
+t24             int                                       4               112             NULL
+t25             int                  1                    4               116             NULL
+t26             int                                       4               120             NULL
+t27             int                                       4               124             NULL
+t28             int                                       4               128             NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: main			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+return          int                  -                    4               0               NULL
+n               int                  -                    4               4               NULL
+read            int                  -                    4               8               NULL
+t0              int                                       4               12              NULL
+print           int                  -                    4               16              NULL
+t1              int                                       4               20              NULL
+fib             int                  -                    4               24              NULL
+t2              int                  6                    4               28              NULL
+t3              int                                       4               32              NULL
+t4              int                                       4               36              NULL
+a               arr(100,int)         -                    400             40              NULL
+t5              int                  100                  4               440             NULL
+t6              int                  0                    4               444             NULL
+t7              int                                       4               448             NULL
+t8              int                  9                    4               452             NULL
+t9              int                                       4               456             NULL
+t10             int                  1                    4               460             NULL
+t11             int                                       4               464             NULL
+t12             int                  8                    4               468             NULL
+t13             int                                       4               472             NULL
+t14             int                  2                    4               476             NULL
+t15             int                                       4               480             NULL
+t16             int                  839                  4               484             NULL
+t17             int                                       4               488             NULL
+t18             int                  3                    4               492             NULL
+t19             int                                       4               496             NULL
+t20             int                  33                   4               500             NULL
+t21             int                                       4               504             NULL
+t22             int                  4                    4               508             NULL
+t23             int                                       4               512             NULL
+t24             int                  2                    4               516             NULL
+t25             int                                       4               520             NULL
+t26             int                  5                    4               524             NULL
+t27             int                                       4               528             NULL
+t28             int                  67                   4               532             NULL
+t29             int                                       4               536             NULL
+t30             int                  6                    4               540             NULL
+t31             int                                       4               544             NULL
+t32             int                  92312                4               548             NULL
+t33             int                                       4               552             NULL
+t34             int                  7                    4               556             NULL
+t35             int                                       4               560             NULL
+t36             int                  90                   4               564             NULL
+t37             int                                       4               568             NULL
+t38             int                  8                    4               572             NULL
+t39             int                                       4               576             NULL
+t40             int                  7                    4               580             NULL
+t41             int                                       4               584             NULL
+bubblesort      int                  -                    4               588             NULL
+t42             int                  9                    4               592             NULL
+t43             int                                       4               596             NULL
+t44             int                  0                    4               600             NULL
+----------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,166 @@
+
+____________________________________________________________________________________________________
+Three Address Code:
+____________________________________________________________________________________________________
+L0:      t0 = 10
+L1:      C = t0
+L2:      t1 = 4.565
+L3:      Y = t1
+L4:      t2 = 'R'
+L5:      ch = t2
+
+L6: gcd: 
+L7:      if a > b goto 10
+L8:      goto 14
+L9:      goto 14
+L10:      tmp = a
+L11:      a = b
+L12:      b = tmp
+L13:      goto 14
+L14:      t2 = 0
+L15:      if a == t2 goto 18
+L16:      goto 20
+L17:      goto 20
+L18:      return b
+L19:      goto 20
+L20:      param a
+L21:      t3 = b - a
+L22:      param t3
+L23:      t4 = call gcd, 2
+L24:      return t4
+
+L25: main: 
+L26:      t0 = 120
+L27:      ipl = t0
+L28:      t1 = 120
+L29:      p = t1
+L30:      t2 = 45
+L31:      football = t2
+L32:      t3 = 'i'
+L33:      ball = t3
+L34:      t4 = 456.3423
+L35:      t5 = -t4
+L36:      db = t5
+L37:      t6 = 10
+L38:      x = t6
+L39:      t7 = 5
+L40:      y = t7
+L41:      t8 = 67
+L42:      a = t8
+L43:      t9 = 89
+L44:      b = t9
+L45:      t10 = a + b
+L46:      ipl = t10
+L47:      t12 = ipl - football
+L48:      k = t12
+L49:      t13 = x * y
+L50:      k = t13
+L51:      t15 = x / y
+L52:      l = t15
+L53:      t17 = x % y
+L54:      l = t17
+L55:      t19 = x & y
+L56:      n = t19
+L57:      t21 = x | y
+L58:      o = t21
+L59:      t23 = 2
+L60:      t24 = i << t23
+L61:      y = t24
+L62:      t26 = 1
+L63:      t27 = i >> t26
+L64:      x = t27
+L65:      t29 = 1
+L66:      t30 = t29 << x
+L67:      y = t30
+L68:      t32 = 0
+L69:      return t32
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+Table Name: Global			 Parent Name: NULL
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+A               int                  -                    4               0               NULL
+B               int                  -                    4               4               NULL
+C               int                  10                   4               8               NULL
+t0              int                  10                   4               12              NULL
+X               float                -                    8               16              NULL
+Y               float                4.565                8               24              NULL
+t1              float                4.565                8               32              NULL
+ch              char                 'R'                  1               40              NULL
+t2              char                 'R'                  1               41              NULL
+gcd             int                  -                    4               42              gcd
+main            void                 -                    0               46              main
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: gcd			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+a               int                  -                    4               0               NULL
+b               int                  -                    4               4               NULL
+return          int                  -                    4               8               NULL
+tmp             int                  -                    4               12              NULL
+t0              int                                       4               16              NULL
+t1              int                                       4               20              NULL
+t2              int                  0                    4               24              NULL
+gcd             int                  -                    4               28              NULL
+t3              int                                       4               32              NULL
+t4              int                                       4               36              NULL
+----------------------------------------------------------------------------------------------------
+
+____________________________________________________________________________________________________
+Table Name: main			 Parent Name: Global
+____________________________________________________________________________________________________
+Name            Type                 Initial Value        Size            Offset          Nested
+                                                                                                     
+ipl             int                  120                  4               0               NULL
+t0              int                  120                  4               4               NULL
+p               int                  120                  4               8               NULL
+t1              int                  120                  4               12              NULL
+football        int                  45                   4               16              NULL
+t2              int                  45                   4               20              NULL
+ball            char                 'i'                  1               24              NULL
+t3              char                 'i'                  1               25              NULL
+db              float                -                    8               26              NULL
+t4              float                456.3423             8               34              NULL
+t5              float                                     8               42              NULL
+x               int                  10                   4               50              NULL
+t6              int                  10                   4               54              NULL
+y               int                  5                    4               58              NULL
+t7              int                  5                    4               62              NULL
+a               int                  67                   4               66              NULL
+t8              int                  67                   4               70              NULL
+b               int                  89                   4               74              NULL
+t9              int                  89                   4               78              NULL
+t10             int                                       4               82              NULL
+t11             int                                       4               86              NULL
+k               int                  -                    4               90              NULL
+t12             int                                       4               94              NULL
+t13             int                                       4               98              NULL
+t14             int                                       4               102             NULL
+l               int                  -                    4               106             NULL
+t15             int                                       4               110             NULL
+t16             int                                       4               114             NULL
+t17             int                                       4               118             NULL
+t18             int                                       4               122             NULL
+n               int                  -                    4               126             NULL
+t19             int                                       4               130             NULL
+t20             int                                       4               134             NULL
+o               int                  -                    4               138             NULL
+t21             int                                       4               142             NULL
+t22             int                                       4               146             NULL
+i               int                  -                    4               150             NULL
+t23             int                  2                    4               154             NULL
+t24             int                                       4               158             NULL
+t25             int                                       4               162             NULL
+t26             int                  1                    4               166             NULL
+t27             int                                       4               170             NULL
+t28             int                                       4               174             NULL
+t29             int                  1                    4               178             NULL
+t30             int                                       4               182             NULL
+t31             int                                       4               186             NULL
+t32             int                  0                    4               190             NULL
+----------------------------------------------------------------------------------------------------
+

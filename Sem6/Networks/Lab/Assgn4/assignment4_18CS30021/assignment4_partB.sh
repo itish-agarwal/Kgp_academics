@@ -168,11 +168,6 @@ sudo ip netns exec H4 ip route add 10.0.50.0/24 via 10.0.60.21 dev V12
 
 
 
-
-
-
-
-
 #now ping all intefaces from individual namespaces
 
 #ping all from H1
