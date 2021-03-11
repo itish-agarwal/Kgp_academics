@@ -1,4 +1,4 @@
-## Computer Networks Lab
+## Operating Systems Lab
 
 All lab assignments of the Operating Systems Lab 2021 <br/>
 - Assignment 1:   Familiarization with shell scripting and shell commands <br/>
