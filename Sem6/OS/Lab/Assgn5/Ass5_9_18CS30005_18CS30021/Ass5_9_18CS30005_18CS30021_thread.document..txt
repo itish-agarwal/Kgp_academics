@@ -1,0 +1,36 @@
+﻿OS Lab Assignment 5
+Design Document
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>
+Group 9
+Aditya Singh 18CS30005
+Itish Agarwal 18CS30021
+>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+PROCESS IMPLEMENTATION
+
+1. Uses system calls instead of pthread library functions
+	
+2. Uses a shared memory fragment structure between the producer and the consumer to store important variables like number of jobs, jobs created, jobs completed, etc
+	
+3. No such arrays were required as no threads were needed to be stored and there were no producer and consumer functions
+	
+4. Producer and consumer processes are created within the main() function itself and have no explicit functions to create them
+	
+5. We have used mutex to prevent concurrent updation to shared variables leading to possible race conditions	
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+THREAD IMPLEMENTATION
+
+1. Uses pthread library functions instead of system calls
+
+2. Instead of a shared memory structure, a global job priority queue is being used between the producers and consumers. Number of jobs, jobs created, jobs completed, etc. are globally stored
+
+3. We created 2 arrays P_arr[ ] and C_arr[ ] and an thread attribute structure to help us pass the producer and consumer number to the corresponding functions in thread_create
+
+4. We have created explicit producer and consumer functions to create their corresponding processes
+
+5. We have used semaphores to tackle concurrent updation
