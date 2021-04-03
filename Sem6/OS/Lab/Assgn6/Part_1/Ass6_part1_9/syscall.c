@@ -27,18 +27,23 @@ int wait (tid_t pid);
 
 // Initialize software interrupt code for syscall handling
 void syscall_init (void) {
-
+	//software interrupt -> our way of entering into the kernel
     intr_register_int (0x30, 3, INTR_ON, syscall_handler, "syscall");
 
     lock_init(&file_lock);
 }
 
 void check_valid_ptr (const void *pointer) {
+
+	//check if vaddr < PHYS_BASE && pointer points to some allocated memory space
     if (!is_user_vaddr(pointer)) {
         exit(-1);
     }
 
+    //0 is success for exit
+
     void *check_pointer = pagedir_get_page(thread_current()->pagedir, pointer);
+
 
     if (!check_pointer) {
         exit(-1);
@@ -64,6 +69,8 @@ void args_extract_1(struct intr_frame *f, int choose, void *args) {
 
 void args_extract_2(struct intr_frame *f, int choose, void *args) {
 
+	//f is the frame pointer
+	// callnumber = f -> esp
     int argv = *((int*) args);
     args += 4;
     int argv_1 = *((int*) args);
@@ -88,6 +95,7 @@ static void syscall_handler (struct intr_frame *frame ) {
 
     check_valid_ptr((const void*) frame -> esp);
 
+    //esp is stack pointer (pointing to top of stack(ie, lowest memory address))
     void *args = frame -> esp;
 
     sys_number = *( (int *) frame -> esp );
@@ -104,8 +112,6 @@ static void syscall_handler (struct intr_frame *frame ) {
         args_extract_2(frame, SYS_WRITE, args);
     } else if(sys_number == SYS_WAIT) {
         args_extract_1(frame, SYS_WAIT, args);
-
-        
     }else {
         printf("Probably the syscall does not belong to part 1 of assignment\n");
         exit(-1);
@@ -116,11 +122,13 @@ tid_t exec (const char *command_line) {
 
     struct thread* parent = thread_current();
     tid_t pid = -1;
+
     // create child process to execute cmd
     pid = process_execute(command_line);
 
     // get the created child
     struct child_element *child = get_child(pid, &parent -> child_list);
+
     // wait this child until load
     sema_down(&child-> child_thread -> sema_exec);
     // after wake up check if child load successfully
